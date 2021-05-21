@@ -1,0 +1,22 @@
+﻿@using System.Drawing.Imaging
+@using Experiment.Controllers
+@model System.Drawing.Bitmap
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+<h3>Выберите файл для загрузки</h3>
+<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br>
+    <input type="submit" value="Загрузить" />
+</form>
+
+<h3>Все файлы</h3>
+@if (Model != null)
+{
+    <p>Во</p>
+    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.ToByteArray(ImageFormat.Bmp)))" />
+}
+else
+{
+    <p>Плохо</p>
+}
