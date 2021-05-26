@@ -1,22 +1,43 @@
 ﻿@using System.Drawing.Imaging
-@using Experiment.Controllers
-@model System.Drawing.Bitmap
+@using Experiment.Extensions
+@model Experiment.ViewModels.FormIndexModel
 @{
     ViewData["Title"] = "Добавление файла";
 }
 <h3>Выберите файл для загрузки</h3>
 <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
-    <input type="file" name="uploadedFile" /><br>
+    <input type="file" name="File" accept="image/*"/><br />
+
+    <br />
+    Выберите метод удаления шума
+    <select id="NoiseMethods" name="NoiseRemovalMethod">
+        @foreach (var method in Model.NoiseRemovalMethods)
+        {
+            <option>@method</option>
+        }
+    </select>
+    <br />
+    
+    <br/>
+    Выберите метод вычисления коэффициентов Цернике
+    <select id="ZernikeComputeMethod" name="ZernikeComputeMethod">
+        @foreach (var method in Model.ZernikeComputeMethods)
+        {
+            <option>@method</option>
+        }
+    </select>
+    <br/>
+    
+    <br/>
+    Показать волновой фронт
+    @Html.CheckBox("ShowWaveFront", false)
+    <br/>
+
     <input type="submit" value="Загрузить" />
 </form>
 
-<h3>Все файлы</h3>
-@if (Model != null)
+@if (Model.Image != null)
 {
-    <p>Во</p>
-    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.ToByteArray(ImageFormat.Bmp)))" />
+    <img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.Image.ToByteArray(ImageFormat.Bmp))}")" />
 }
-else
-{
-    <p>Плохо</p>
-}
+

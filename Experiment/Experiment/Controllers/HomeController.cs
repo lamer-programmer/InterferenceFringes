@@ -1,41 +1,54 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Threading.Tasks;
-using Experiment.Managers;
 using Experiment.Models;
+using Experiment.ViewModels;
 using Microsoft.AspNetCore.Http;
 
 namespace Experiment.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ImageManager imageManager;
-
-		public HomeController(ImageManager imageManager)
+		private Bitmap GetImageSession(string key)
 		{
-			this.imageManager = imageManager;
+			var session = HttpContext.Session;
+			var dataImage = session.Get(key);
+
+			if (dataImage == null)
+			{
+				return null;
+			}
+
+			using var memoryStream = new MemoryStream(dataImage);
+			return new Bitmap(memoryStream);
 		}
 
 		public IActionResult Index()
 		{
-			return View(imageManager.Image);
+			var viewModel = new FormIndexModel {Image = GetImageSession("inputImage")};
+
+			return View(viewModel);
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> AddFile(IFormFile uploadedFile)
+		public async Task<IActionResult> AddFile(FormOutputModel model)
 		{
-			if (uploadedFile == null)
+			Console.WriteLine(model.NoiseRemovalMethod);
+			Console.WriteLine(model.ShowWaveFront);
+			Console.WriteLine(model.ZernikeComputeMethod);
+			
+			if (model.File == null)
 			{
 				return RedirectToAction("Index");
 			}
 
 			await using (var memoryStream = new MemoryStream())
 			{
-				await uploadedFile.CopyToAsync(memoryStream);
-				imageManager.Image = (Bitmap)Image.FromStream(memoryStream);
+				await model.File.CopyToAsync(memoryStream);
+				HttpContext.Session.Set("inputImage", memoryStream.GetBuffer());
 			}
 
 			return RedirectToAction("Index");
@@ -45,16 +58,6 @@ namespace Experiment.Controllers
 		public IActionResult Error()
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-		}
-	}
-
-	public static class ImageExtensions
-	{
-		public static byte[] ToByteArray(this Image image, ImageFormat format)
-		{
-			using var stream = new MemoryStream();
-			image.Save(stream, format);
-			return stream.ToArray();
 		}
 	}
 }

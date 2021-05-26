@@ -1,4 +1,4 @@
-using Experiment.Managers;
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,10 +18,17 @@ namespace Experiment
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddSingleton<ImageManager>();
+			services.AddDistributedMemoryCache();
+			services.AddSession(options =>
+			{
+				options.Cookie.Name = ".Experiment.Session";
+				options.IdleTimeout = TimeSpan.FromSeconds(3600);
+				options.Cookie.IsEssential = true;
+			});
+
 			services.AddControllersWithViews();
 		}
-
+		
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
@@ -33,6 +40,8 @@ namespace Experiment
 				app.UseExceptionHandler("/Home/Error");
 				app.UseHsts();
 			}
+
+			app.UseSession();
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 
