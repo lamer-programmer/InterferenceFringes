@@ -1,0 +1,39 @@
+﻿@using System.Drawing.Imaging
+@using Experiment.Extensions
+@model Experiment.ViewModels.FormHomeModel
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+<h3>Выберите файл для загрузки</h3>
+<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <input type="file" name="File" accept="image/*"/><br />
+
+    <br />
+    Выберите метод удаления шума
+    <select id="NoiseMethods" name="NoiseRemovalMethod">
+        @foreach (var method in Model.NoiseRemovalMethods)
+        {
+            <option>@method</option>
+        }
+    </select>
+    <br />
+    
+    <br/>
+    Выберите метод вычисления коэффициентов Цернике
+    <select id="ZernikeComputeMethod" name="ZernikeComputeMethod">
+        @foreach (var method in Model.ZernikeComputeMethods)
+        {
+            <option>@method</option>
+        }
+    </select>
+    <br/>
+    
+    <br/>
+    Показать волновой фронт
+    @Html.CheckBox("ShowWaveFront", false)
+    <br/>
+
+    <input type="submit" value="Загрузить" />
+</form>
+
+

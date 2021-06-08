@@ -1,0 +1,33 @@
+﻿@using System.Drawing.Imaging
+@using Experiment.Extensions
+@model Experiment.ViewModels.ResultHomeModel
+
+
+<p>Input image</p>
+<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.InputImage.ToByteArray(ImageFormat.Bmp))}")" />
+<br />
+<br />
+<p>Output image</p>
+<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.OutputImage.ToByteArray(ImageFormat.Bmp))}")" />
+<br />
+<br />
+<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.HeightMap.ToByteArray(ImageFormat.Bmp))}")" />
+<br />
+<br />
+
+<p>Zernike coefficients</p>
+<table>
+    <tr>
+    @{
+        int i = 0;
+    }
+    @foreach (var c in Model.ZernikeCoefficients)
+    {
+        i++;
+        <td>@c</td>
+        if (i % 5 == 0)
+        {
+            <tr/>
+        }
+    }
+</table>
