@@ -51,7 +51,8 @@ namespace Experiment.Controllers
 				HttpContext.Session.Set("inputImage", memoryStream.GetBuffer());
 			}
 
-			return RedirectToAction("Index");
+			// return RedirectToAction("Index");
+			return Redirect("~/Result/Result");
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -39,3 +39,5 @@ D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\bin\Debug
 D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\obj\Debug\netcoreapp3.1\Razor\Views\Result\Result.cshtml.g.cs
+D:\Alexej Huber\Projects\git\InterferenceFringes\Experiment\Experiment\obj\Debug\netcoreapp3.1\Razor\Views\ZernikeInput\Index.cshtml.g.cs
