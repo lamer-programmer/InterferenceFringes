@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Experiment.Algorithms
+namespace Experiment.Infrastructure.Algorithms
 {
 	interface INoiseRemover
 	{

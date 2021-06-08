@@ -1,6 +1,6 @@
 ﻿@using System.Drawing.Imaging
 @using Experiment.Extensions
-@model Experiment.ViewModels.FormIndexModel
+@model Experiment.ViewModels.FormHomeModel
 @{
     ViewData["Title"] = "Добавление файла";
 }
@@ -36,8 +36,4 @@
     <input type="submit" value="Загрузить" />
 </form>
 
-@if (Model.Image != null)
-{
-    <img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.Image.ToByteArray(ImageFormat.Bmp))}")" />
-}
 
