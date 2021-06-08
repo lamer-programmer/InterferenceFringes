@@ -20,7 +20,16 @@ namespace Experiment.ViewModels
 			get
 			{
 				var emulator = new ZernikeEmulator();
-				return emulator.Emulate(coefficients);
+				return emulator.Emulate(coefficients).Item1;
+			}
+		}
+
+		public Bitmap HeightMap
+		{
+			get
+			{
+				var emulator = new ZernikeEmulator();
+				return emulator.Emulate(coefficients).Item2;
 			}
 		}
 	}

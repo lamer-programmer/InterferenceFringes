@@ -7,9 +7,9 @@ namespace Experiment.Infrastructure.Algorithms
 	[NameAlgorithm("ZernikeEmulator")]
 	public class ZernikeEmulator : IZernikeEmulator
 	{
-		public Bitmap Emulate(IEnumerable<double> zernikeCoefficients)
+		public (Bitmap, Bitmap) Emulate(IEnumerable<double> zernikeCoefficients)
 		{
-			return new Bitmap(100, 100);
+			return (new Bitmap(100, 100), new Bitmap(200, 200));
 		}
 	}
 }

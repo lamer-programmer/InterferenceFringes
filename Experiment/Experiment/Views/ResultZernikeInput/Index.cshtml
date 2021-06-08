@@ -8,11 +8,5 @@
 @model Experiment.ViewModels.ZernikeInputResultModel
 
 
-@if (Model.OutputImage != null)
-{
-    <img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.OutputImage.ToByteArray(ImageFormat.Bmp))}")" />
-}
-else
-{
-    <p>Всё печально.</p>
-}
+<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.OutputImage.ToByteArray(ImageFormat.Bmp))}")" />
+<img src="@($"data:image/png;base64,{Convert.ToBase64String(Model.HeightMap.ToByteArray(ImageFormat.Bmp))}")" />

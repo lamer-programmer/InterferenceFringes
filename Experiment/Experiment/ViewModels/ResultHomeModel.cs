@@ -16,7 +16,7 @@ namespace Experiment.ViewModels
 
 		private Func<Bitmap, Bitmap> noiseRemoveFunc;
 		private Func<Bitmap, IEnumerable<double>> zernikeCalcFunc;
-		private Func<IEnumerable<double>, Bitmap> emulatorFunc;
+		private Func<IEnumerable<double>, (Bitmap, Bitmap)> emulatorFunc;
 
 		public ResultHomeModel(ISession session)
 		{
@@ -27,7 +27,7 @@ namespace Experiment.ViewModels
 		// Порядок: NoiseRemover, ZernikeCalculator, ZernikeEmulator
 		private (Func<Bitmap, Bitmap>,
 			Func<Bitmap, IEnumerable<double>>,
-			Func<IEnumerable<double>, Bitmap>) GetTypes()
+			Func<IEnumerable<double>, (Bitmap, Bitmap)>) GetTypes()
 		{
 			var noiseRemoverName = session.Get<string>("noiseRemovalMethod");
 			var noiseRemoveClass = typeof(Program)
@@ -60,8 +60,8 @@ namespace Experiment.ViewModels
 
 			var emulatorMethod = typeof(ZernikeEmulator).GetMethod("Emulate");
 			var emulatorInstance = new ZernikeEmulator();
-			var emulatorZFunc = (Func<IEnumerable<double>, Bitmap>)Delegate.CreateDelegate(
-				typeof(Func<IEnumerable<double>, Bitmap>), emulatorInstance, emulatorMethod);
+			var emulatorZFunc = (Func<IEnumerable<double>, (Bitmap, Bitmap)>)Delegate.CreateDelegate(
+				typeof(Func<IEnumerable<double>, (Bitmap, Bitmap)>), emulatorInstance, emulatorMethod);
 
 			return (noiseRemoveFunc, calcFunc, emulatorZFunc);
 		}
@@ -83,11 +83,19 @@ namespace Experiment.ViewModels
 			{
 				var image = noiseRemoveFunc(InputImage);
 				var coefficients = zernikeCalcFunc(image);
-				return emulatorFunc(coefficients);
+				return emulatorFunc(coefficients).Item1;
 			}
 		}
 
-		public Bitmap HeightMap => OutputImage;
+		public Bitmap HeightMap
+		{
+			get
+			{
+				var image = noiseRemoveFunc(InputImage);
+				var coefficients = zernikeCalcFunc(image);
+				return emulatorFunc(coefficients).Item2;
+			}
+		}
 
 		public IEnumerable<double> ZernikeCoefficients
 		{
