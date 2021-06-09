@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "djlfNfwkVROV3SNy7IvOSzMNFNqqh18sao5ymPs6TGQ4K/hkZD7VxMMG9aMIlKrUfG+TkWhhZ2NixC5wrAt4sQ==",
+  "dgSpecHash": "mdENo3i/nNMDv1EUXMDNGQjtwcF0LuBXvEaY7G6CoKyYnNBbz+JVk9g9sn1PpdXdBaghLysQ+uJ3WOYv2Y0Tjw==",
   "success": true,
-  "projectFilePath": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj",
+  "projectFilePath": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\opencvsharp3-anycpu\\4.0.0.20181129\\opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
   ],
   "logs": []

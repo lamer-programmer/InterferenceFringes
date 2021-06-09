@@ -29,6 +29,43 @@
           }
         }
       },
+      "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OpenCvSharp.Blob.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.Extensions.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenCvSharp.Blob.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.Extensions.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.dll": {}
+        },
+        "build": {
+          "build/OpenCvSharp3-AnyCPU.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win10-x64/native/OpenCvSharpExtern.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x64/native/opencv_ffmpeg400_64.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/OpenCvSharpExtern.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win10-x86/native/opencv_ffmpeg400.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
       "System.Drawing.Common/5.0.2": {
         "type": "package",
         "dependencies": {
@@ -100,6 +137,61 @@
         "version.txt"
       ]
     },
+    "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
+      "sha512": "fAXJW98FU3ZAlS3LDrRAXeg7h5ufA9Z1mAQNsXIPSTQHS+Ql2+KdzdYXs+p+lZhyH9baJWPDB42E+EN1KJ0Y3w==",
+      "type": "package",
+      "path": "opencvsharp3-anycpu/4.0.0.20181129",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/OpenCvSharp3-AnyCPU.props",
+        "lib/net20/OpenCvSharp.Blob.dll",
+        "lib/net20/OpenCvSharp.Blob.pdb",
+        "lib/net20/OpenCvSharp.Blob.xml",
+        "lib/net20/OpenCvSharp.dll",
+        "lib/net20/OpenCvSharp.pdb",
+        "lib/net20/OpenCvSharp.xml",
+        "lib/net40/OpenCvSharp.Blob.dll",
+        "lib/net40/OpenCvSharp.Blob.pdb",
+        "lib/net40/OpenCvSharp.Blob.xml",
+        "lib/net40/OpenCvSharp.Extensions.dll",
+        "lib/net40/OpenCvSharp.Extensions.pdb",
+        "lib/net40/OpenCvSharp.Extensions.xml",
+        "lib/net40/OpenCvSharp.UserInterface.dll",
+        "lib/net40/OpenCvSharp.UserInterface.pdb",
+        "lib/net40/OpenCvSharp.UserInterface.xml",
+        "lib/net40/OpenCvSharp.dll",
+        "lib/net40/OpenCvSharp.pdb",
+        "lib/net40/OpenCvSharp.xml",
+        "lib/net461/OpenCvSharp.Blob.dll",
+        "lib/net461/OpenCvSharp.Blob.pdb",
+        "lib/net461/OpenCvSharp.Blob.xml",
+        "lib/net461/OpenCvSharp.Extensions.dll",
+        "lib/net461/OpenCvSharp.Extensions.pdb",
+        "lib/net461/OpenCvSharp.Extensions.xml",
+        "lib/net461/OpenCvSharp.UserInterface.dll",
+        "lib/net461/OpenCvSharp.UserInterface.pdb",
+        "lib/net461/OpenCvSharp.UserInterface.xml",
+        "lib/net461/OpenCvSharp.dll",
+        "lib/net461/OpenCvSharp.pdb",
+        "lib/net461/OpenCvSharp.xml",
+        "lib/netstandard2.0/OpenCvSharp.Blob.dll",
+        "lib/netstandard2.0/OpenCvSharp.Blob.pdb",
+        "lib/netstandard2.0/OpenCvSharp.Blob.xml",
+        "lib/netstandard2.0/OpenCvSharp.Extensions.dll",
+        "lib/netstandard2.0/OpenCvSharp.Extensions.pdb",
+        "lib/netstandard2.0/OpenCvSharp.Extensions.xml",
+        "lib/netstandard2.0/OpenCvSharp.dll",
+        "lib/netstandard2.0/OpenCvSharp.pdb",
+        "lib/netstandard2.0/OpenCvSharp.xml",
+        "opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512",
+        "opencvsharp3-anycpu.nuspec",
+        "runtimes/win10-x64/native/OpenCvSharpExtern.dll",
+        "runtimes/win10-x64/native/opencv_ffmpeg400_64.dll",
+        "runtimes/win10-x86/native/OpenCvSharpExtern.dll",
+        "runtimes/win10-x86/native/opencv_ffmpeg400.dll"
+      ]
+    },
     "System.Drawing.Common/5.0.2": {
       "sha512": "rvr/M1WPf24ljpvvrVd74+NdjRUJu1bBkspkZcnzSZnmAUQWSvanlQ0k/hVHk+cHufZbZfu7vOh/vYc0q5Uu/A==",
       "type": "package",
@@ -145,6 +237,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "OpenCvSharp3-AnyCPU >= 4.0.0.20181129",
       "System.Drawing.Common >= 5.0.2"
     ]
   },
@@ -154,11 +247,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj",
+      "projectUniqueName": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj",
       "projectName": "Experiment",
-      "projectPath": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj",
+      "projectPath": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj",
       "packagesPath": "C:\\Users\\alexe\\.nuget\\packages\\",
-      "outputPath": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\obj\\",
+      "outputPath": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -187,6 +280,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "OpenCvSharp3-AnyCPU": {
+            "target": "Package",
+            "version": "[4.0.0.20181129, )"
+          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[5.0.2, )"

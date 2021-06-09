@@ -8,7 +8,7 @@ namespace Experiment.Controllers
 {
 	public class ZernikeInputController : Controller
 	{
-		private const int CoefficientsNumber = 20;
+		private const int CoefficientsNumber = 10;
 
 		public IActionResult Index()
 		{
@@ -17,8 +17,6 @@ namespace Experiment.Controllers
 
 		public async Task<IActionResult> Emulate(IEnumerable<double> zernikeCoefficients)
 		{
-			// var coefficientsString = string
-			//	.Join('|', zernikeCoefficients.Select(Convert.ToString));
 			HttpContext.Session.Set("zernikeCoefficients", zernikeCoefficients);
 			return Redirect("~/ResultZernikeInput/Index");
 		}

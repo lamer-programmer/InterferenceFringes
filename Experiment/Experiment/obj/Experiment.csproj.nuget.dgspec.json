@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj": {}
+    "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj": {}
   },
   "projects": {
-    "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj": {
+    "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj",
+        "projectUniqueName": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj",
         "projectName": "Experiment",
-        "projectPath": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\Experiment.csproj",
+        "projectPath": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\Experiment.csproj",
         "packagesPath": "C:\\Users\\alexe\\.nuget\\packages\\",
-        "outputPath": "D:\\Alexej Huber\\Projects\\git\\InterferenceFringes\\Experiment\\Experiment\\obj\\",
+        "outputPath": "D:\\Alexej Huber\\Projects\\C#\\folder\\Experiment\\Experiment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "OpenCvSharp3-AnyCPU": {
+              "target": "Package",
+              "version": "[4.0.0.20181129, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[5.0.2, )"

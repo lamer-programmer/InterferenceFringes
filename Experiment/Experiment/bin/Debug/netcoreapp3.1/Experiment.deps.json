@@ -19,7 +19,7 @@
     ],
     "languageVersion": "8.0",
     "platform": "",
-    "allowUnsafe": false,
+    "allowUnsafe": true,
     "warningsAsErrors": false,
     "optimize": false,
     "keyFile": "",
@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Experiment/1.0.0": {
         "dependencies": {
+          "OpenCvSharp3-AnyCPU": "4.0.0.20181129",
           "System.Drawing.Common": "5.0.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -340,6 +341,52 @@
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
           }
+        }
+      },
+      "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
+        "dependencies": {
+          "System.Drawing.Common": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenCvSharp.Blob.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/OpenCvSharp.Extensions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/OpenCvSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win10-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win10-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win10-x64/native/opencv_ffmpeg400_64.dll": {
+            "rid": "win10-x64",
+            "assetType": "native",
+            "fileVersion": "2018.11.0.0"
+          },
+          "runtimes/win10-x86/native/OpenCvSharpExtern.dll": {
+            "rid": "win10-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win10-x86/native/opencv_ffmpeg400.dll": {
+            "rid": "win10-x86",
+            "assetType": "native",
+            "fileVersion": "2018.11.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/OpenCvSharp.Blob.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.Extensions.dll": {},
+          "lib/netstandard2.0/OpenCvSharp.dll": {}
         }
       },
       "System.Drawing.Common/5.0.2": {
@@ -2083,6 +2130,13 @@
       "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fAXJW98FU3ZAlS3LDrRAXeg7h5ufA9Z1mAQNsXIPSTQHS+Ql2+KdzdYXs+p+lZhyH9baJWPDB42E+EN1KJ0Y3w==",
+      "path": "opencvsharp3-anycpu/4.0.0.20181129",
+      "hashPath": "opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512"
     },
     "System.Drawing.Common/5.0.2": {
       "type": "package",
