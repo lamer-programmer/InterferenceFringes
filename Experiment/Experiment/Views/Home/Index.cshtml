@@ -1,9 +1,5 @@
-﻿@using System.Drawing.Imaging
-@using Experiment.Extensions
-@model Experiment.ViewModels.FormHomeModel
-@{
-    ViewData["Title"] = "Добавление файла";
-}
+﻿@model Experiment.ViewModels.FormHomeModel
+
 <h3>Выберите файл для загрузки</h3>
 <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
     <input type="file" name="File" accept="image/*"/><br />

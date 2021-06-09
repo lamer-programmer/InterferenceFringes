@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using Experiment.Infrastructure.Attributes;
-using Microsoft.AspNetCore.Http;
 
 namespace Experiment.ViewModels
 {

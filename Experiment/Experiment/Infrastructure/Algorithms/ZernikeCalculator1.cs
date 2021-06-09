@@ -10,8 +10,7 @@ namespace Experiment.Infrastructure.Algorithms
 	{
 		public IEnumerable<double> CalculateCoefficients(Bitmap image)
 		{
-			// Это заглушка.
-			return Enumerable.Repeat(2.0, 20);
+			return Enumerable.Repeat(2.0, 10);
 		}
 	}
 }

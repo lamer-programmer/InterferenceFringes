@@ -1,14 +1,12 @@
 ﻿@page
 @model IEnumerable<double>
-@{
-}
 
 <form asp-action="Emulate" asp-controller="ZernikeInput" method="post" enctype="multipart/form-data">
     Введите коэффициенты Цернике
-    <br/>
+    <br />
     @Html.EditorFor(model => model)
-    <br/>
-    <br/>
-    <input type="submit" value="Восстановить изображение"/>
+    <br />
+    <br />
+    <input type="submit" value="Восстановить изображение" />
 </form>
 

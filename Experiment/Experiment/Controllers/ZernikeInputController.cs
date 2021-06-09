@@ -10,6 +10,11 @@ namespace Experiment.Controllers
 	{
 		private const int CoefficientsNumber = 10;
 
+		public ZernikeInputController()
+		{
+			ViewData["Title"] = "Ввод коэффициентов";
+		}
+
 		public IActionResult Index()
 		{
 			return View(Enumerable.Repeat(0.0, CoefficientsNumber).ToList());

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
 using Experiment.Infrastructure.Attributes;
 using OpenCvSharp;

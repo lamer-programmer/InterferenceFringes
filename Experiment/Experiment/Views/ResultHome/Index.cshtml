@@ -18,16 +18,16 @@
 <p>Zernike coefficients</p>
 <table>
     <tr>
-    @{
-        int i = 0;
-    }
-    @foreach (var c in Model.ZernikeCoefficients)
-    {
-        i++;
-        <td>@c</td>
-        if (i % 5 == 0)
+        @{
+            int i = 0;
+        }
+        @foreach (var c in Model.ZernikeCoefficients)
         {
-            <tr/>
+            i++;
+            <td>@c</td>
+            if (i % 5 == 0)
+            {
+            <tr />
         }
     }
-</table>
+    </table>
